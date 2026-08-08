@@ -7,17 +7,17 @@ use function Encoding\base58_encode;
 use function Encoding\base58_decode;
  
 $data = 'Hello world!';
-$encodedBitcoin = "72k1xXWG59fYdzSNoA";
-$encodedFlickr = "Z7Pznk19XTTzBtx";
+$encodedBitcoin = "2NEpo7TZRhna7vSvL";
+$encodedFlickr = "2nePN7syqGMz7VrVk";
  
 echo base58_encode($data);
-// returns "72k1xXWG59fYdzSNoA" default to Bitcoin variant
+// returns "2NEpo7TZRhna7vSvL" default to Bitcoin variant
 
 echo base58_encode($data, variant: Base58::Bitcoin);
-// returns "72k1xXWG59fYdzSNoA" the variant is explicitly specified
+// returns "2NEpo7TZRhna7vSvL" the variant is explicitly specified
 
 echo base58_encode($data, variant: Base58::Flickr);
-// returns "Z7Pznk19XTTzBtx" the flickr variant
+// returns "2nePN7syqGMz7VrVk" the flickr variant
 
 echo base58_decode($encodedBitcoin);
 // returns 'Hello world!'

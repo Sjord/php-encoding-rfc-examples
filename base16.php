@@ -9,8 +9,8 @@ use function Encoding\base16_decode;
 $data = 'Hello world!';
 $encodedUpper = "48656C6C6F20776F726C6421"; // using uppercase characters
 $encodedLower = "48656c6c6f20776f726c6421"; // using lowercase characters
-$encodedUpperWithSpaces = "48 65\n6C\t6C\r6F 2C 20 57 6F 72 6C 64 21";
-$encodedWithSpaces = "48 65\n6C\t6C\r6F 2c 20 57 6f 72 6C 64 21";
+$encodedUpperWithSpaces = "48 65\n6C\t6C\r6F 20 57 6F 72 6C 64 21";
+$encodedWithSpaces = "48 65\n6C\t6C\r6F 20 57 6f 72 6C 64 21";
 
 echo base16_encode($data);
 // returns "48656C6C6F20776F726C6421" the letters are uppercased by default

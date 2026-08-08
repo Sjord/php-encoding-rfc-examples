@@ -10,7 +10,7 @@ use function Encoding\base85_decode;
 $data = 'Hello world!';
 $encodedAdobe = "<~87cURD]j7BEbo80~>";
 $encodedAdobeNoPadding = "87cURD]j7BEbo80";
-$encodedZ85 = "nm=QNz.92Pz/P";
+$encodedZ85 = "nm=QNzY<mxA+]nf";
  
 echo base85_encode($data, variant: Base85::Adobe);
 // "<~87cURD]j7BEbo80~>"

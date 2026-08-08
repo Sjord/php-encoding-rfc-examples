@@ -8,20 +8,20 @@ use function Encoding\base32_encode;
 use function Encoding\base32_decode;
  
 $data = 'Hello world!';
-$encodedAscii = "JBSWY3DPEBLW64TMMQ======";
-$encodedCrockFord = "91JPRV3F41BPYWKCCG";
+$encodedAscii = "JBSWY3DPEB3W64TMMQQQ====";
+$encodedCrockFord = "91JPRV3F41VPYWKCCGGG";
  
 echo base32_encode($data);
-// returns "JBSWY3DPEBLW64TMMQ======"
+// returns "JBSWY3DPEB3W64TMMQQQ===="
 
 echo base32_encode($data, variant: Bas32::Ascii);
-// returns "JBSWY3DPEBLW64TMMQ======"
+// returns "JBSWY3DPEB3W64TMMQQQ===="
 
 echo base32_encode($data, paddingMode: PaddingMode::StripPadding);
-// returns "JBSWY3DPEBLW64TMMQ"
+// returns "JBSWY3DPEB3W64TMMQQQ"
 
 echo base32_encode($data, variant: Bas32::CrockFord);
-// returns "91JPRV3F41BPYWKCCG"
+// returns "91JPRV3F41VPYWKCCGGG"
 
 echo base32_encode($data, variant: Bas32::CrockFord, paddingMode: PaddingMode::PreservePadding);
 // throw ValueError the variant does not support the padding mode
@@ -29,10 +29,10 @@ echo base32_encode($data, variant: Bas32::CrockFord, paddingMode: PaddingMode::P
 echo base32_decode($encodedAscii);
 // returns 'Hello world!'
 
-echo base32_decode("JBSWY3DPEBLW64TMMQ");
+echo base32_decode("JBSWY3DPEB3W64TMMQQQ");
 // throws a UnableToDecodeException exception the padding character is missing
 
-echo base32_decode("JBSWY3DPEBLW64TMMQ", decodingMode: DecodingMode::Forgiving);
+echo base32_decode("JBSWY3DPEB3W64TMMQQQ", decodingMode: DecodingMode::Forgiving);
 // returns 'Hello world!'
 
 echo base32_decode($encodedAscii, variant: Bas32::CrockFord);
