@@ -14,16 +14,16 @@ $encodedCrockFord = "91JPRV3F41VPYWKCCGGG";
 echo base32_encode($data);
 // returns "JBSWY3DPEB3W64TMMQQQ===="
 
-echo base32_encode($data, variant: Bas32::Ascii);
+echo base32_encode($data, variant: Base32::Ascii);
 // returns "JBSWY3DPEB3W64TMMQQQ===="
 
 echo base32_encode($data, paddingMode: PaddingMode::StripPadding);
 // returns "JBSWY3DPEB3W64TMMQQQ"
 
-echo base32_encode($data, variant: Bas32::CrockFord);
+echo base32_encode($data, variant: Base32::CrockFord);
 // returns "91JPRV3F41VPYWKCCGGG"
 
-echo base32_encode($data, variant: Bas32::CrockFord, paddingMode: PaddingMode::PreservePadding);
+echo base32_encode($data, variant: Base32::CrockFord, paddingMode: PaddingMode::PreservePadding);
 // throw ValueError the variant does not support the padding mode
 
 echo base32_decode($encodedAscii);
@@ -35,10 +35,10 @@ echo base32_decode("JBSWY3DPEB3W64TMMQQQ");
 echo base32_decode("JBSWY3DPEB3W64TMMQQQ", decodingMode: DecodingMode::Forgiving);
 // returns 'Hello world!'
 
-echo base32_decode($encodedAscii, variant: Bas32::CrockFord);
+echo base32_decode($encodedAscii, variant: Base32::CrockFord);
 // throws a UnableToDecodeException exception if the encoding string contains
 // invalid characters may returns a meaningless string if the characters are
 // all supported, but the data was encoded with a different variant.
 
-echo base32_decode($encodedCrockFord, variant: Bas32::CrockFord);
+echo base32_decode($encodedCrockFord, variant: Base32::CrockFord);
 // returns 'Hello world!'
